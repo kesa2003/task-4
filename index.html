@@ -1,0 +1,137 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8" />
+    <meta http-equiv="X-UA-Compatible" content="IE=edge" />
+    <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+    <link rel="stylesheet" href="style.css">
+    <title>HassanAwan</title>
+    <style>
+        * {
+            padding: 0;
+            margin: 0;
+            box-sizing: border-box;
+            font-family: 'Gill Sans', 'Gill Sans MT', Calibri, 'Trebuchet MS', sans-serif;
+        }
+
+        .container {
+            background-color: orangered;
+            display: flex;
+            align-items: center;
+            justify-content: center;
+            width: 100%;
+            height: 100vh;
+        }
+
+        .form {
+            position: absolute;
+            max-width: 450px;
+            width: 100%;
+            margin: 20px;
+            padding: 15px;
+            background-color: #fff;
+            border-radius: 8px;
+        }
+
+        .heading {
+            font-size: 28px;
+            text-align: center;
+            font-weight: 500;
+        }
+
+        .line {
+            background-color: rgb(195, 195, 195);
+            margin: 20px;
+            height: 1px;
+        }
+
+        .content {
+            margin: 0 20px;
+            margin-bottom: 30px;
+        }
+
+        .field {
+            width: 100%;
+            margin: 10px 0;
+        }
+
+        .field input {
+            width: 100%;
+            padding: 0 15px;
+            border: none;
+            border-bottom: 2px solid #ccc;
+            transition: border-color 0.3s;
+        }
+
+        .field input:focus {
+            border-bottom: 2px solid rgb(255, 119, 0);
+        }
+
+        .field button {
+            width: 100%;
+            height: 35px;
+            background-color: rgb(255, 119, 0);
+            border: none;
+            color: #fff;
+            font-size: 18px;
+            cursor: pointer;
+            border-radius: 12px;
+        }
+
+        .link {
+            text-align: center;
+            margin: 20px 0;
+        }
+
+        .show-password-label {
+            display: flex;
+            align-items: center;
+            margin-top: 10px;
+        }
+
+        .show-password-label input {
+            margin-right: 8px;
+        }
+    </style>
+</head>
+<body>
+    <section class="container forms">
+        <div class="form login">
+            <h3 class="heading">Login-Form</h3>
+            <form action="#" class="content" novalidate>
+                <div class="field input">
+                    <input type="email" id="email" placeholder="Enter your Email" required aria-label="Email" />
+                </div>
+
+                <div class="field input">
+                    <input type="password" placeholder="Enter your Password" class="password" id="password" required aria-label="Password" />
+                </div>
+
+                <div class="show-password-label">
+                    <input type="checkbox" id="showPassword" onclick="togglePasswordVisibility()"> 
+                    <label for="showPassword">Show Password</label>
+                </div>
+
+                <div class="field btn">
+                    <button type="submit">Login</button>
+                </div>
+
+                <div class="link sign-login">
+                    <span>Don't have an Account?</span>
+                    <a href="index.html" class="forget">Sign up</a>
+                </div>
+
+                <div class="line"></div>
+            </form>
+        </div>
+    </section>
+
+    <script>
+        function togglePasswordVisibility() {
+            const passwordInput = document.getElementById('password');
+            const showPasswordCheckbox = document.getElementById('showPassword');
+            passwordInput.type = showPasswordCheckbox.checked ? 'text' : 'password';
+        }
+    </script>
+</body>
+</html>
